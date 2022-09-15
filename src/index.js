@@ -7,6 +7,8 @@ import './index.css';
 import { createTheme, ThemeProvider } from '@mui/material';
 
 const theme = createTheme({
+  margin: 0,
+  padding: 0,
   typography: {
     fontFamily: 'Avenir',
   }
