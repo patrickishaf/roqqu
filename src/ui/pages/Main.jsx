@@ -1,12 +1,12 @@
 import { AppBar, Avatar, Badge, Box, Stack, Toolbar, Typography } from "@mui/material"
 import { Outlet } from "react-router-dom";
 import { NotificationsNoneOutlined } from '@mui/icons-material';
-import { actionStyle, actionSpacingStyle, notifAvatarStyle, rootStyle } from "../styles/main";
+import { actionStyle, actionSpacingStyle, notifAvatarStyle, rootStyle, appbarStyle } from "../styles/main";
 
 export default function Main() {
     return (
         <Box sx={rootStyle}>
-            <AppBar sx={{ bgcolor: '#080F24' }}>
+            <AppBar sx={appbarStyle}>
                 <Toolbar>
                     <Stack direction='row' justifyContent='space-between' alignItems='center' sx={{ width: '100%' }}>
                         <Typography>roqqu</Typography>

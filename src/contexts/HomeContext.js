@@ -3,11 +3,13 @@ import { createContext } from "react";
 const homeState = {
     date: 'JANUARY 2, 2022',
     walletBalance: {
+        symbol: 'BTC',
         btc: 0.2993029,
-        usd: '3700 USD',
+        usd: '3,700 USD',
     },
     activities: [
         {
+            type: 'withdrawal',
             icon: '',
             title: 'Withdrew USDT',
             status: 'complete',
@@ -15,6 +17,7 @@ const homeState = {
             date: 'Dec 21, 2021',
         },
         {
+            type: 'exchange',
             icon: '',
             title: 'Echanged BTC',
             status: 'complete',
@@ -22,41 +25,12 @@ const homeState = {
             date: 'Dec 21, 2021',
         },
         {
+            type: 'deposit',
             icon: '',
             title: 'Deposit ETH',
             status: 'complete',
             amount: '992333.93USDT',
             date: 'Dec 21, 2021',
-        },
-    ],
-    coreAssets: [
-        {
-            img: '',
-            name: 'Bitcoin',
-            symbol: 'BTC',
-            rate: '54372.94USD',
-            delta: '+2.43%',
-        },
-        {
-            img: '',
-            name: 'Tether',
-            symbol: 'USDT',
-            rate: '1.02USD',
-            delta: '+2.43%',
-        },
-        {
-            img: '',
-            name: 'Ethereum',
-            symbol: 'ETH',
-            rate: '54372.94USD',
-            delta: '+2.43%',
-        },
-        {
-            img: '',
-            name: 'Binance Coin',
-            symbol: 'BNB',
-            rate: '54372.94USD',
-            delta: '+2.43%',
         },
     ],
 };

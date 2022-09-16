@@ -8,8 +8,13 @@
     src: url('./fonts/avenir/AvenirLTStd-Book.otf');
 }
 
+html {
+    background-color: #080F24;
+}
+
 * {
     font-family: 'Avenir';
     margin: 0;
     box-sizing: border-box;
+    color: white;
 }

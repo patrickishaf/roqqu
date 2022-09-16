@@ -1,3 +1,8 @@
+export const appbarStyle = {
+    position: 'sticky',
+    bgcolor: '#080F24'
+}
+
 export const notifAvatarStyle = {
     bgcolor: 'transparent',
     padding: 0,
