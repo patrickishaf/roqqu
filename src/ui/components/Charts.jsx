@@ -86,7 +86,7 @@ export default function Charts() {
             </Stack>
             <Box sx={{ height: '1rem' }} />
             <Box ref={chartBox} sx={{ bgcolor: '#04091C', width: '100%', height: '350px' }}>
-                <Chart options={chartData.options} series={chartData.series} type="candlestick" width={1000} height={400} />
+                <Chart options={chartData.options} series={chartData.series} type="candlestick" width={950} height={400} />
             </Box>
         </Box>
     );

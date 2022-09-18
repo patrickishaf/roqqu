@@ -14,7 +14,7 @@ export default function OrderGrid({ highlightColor, highlightTextColor }) {
                     <Grid key={index} item xs={4} md={4}>
                         <ProgressIndicator
                             indicatorColor={highlightColor}
-                            value={exchangeData.orderBook.price}
+                            value={(item === 0 || item % 3 === 0) ? exchangeData.orderBook.price : exchangeData.orderBook.amount }
                             progress={exchangeData.progresses[index]}
                             textStyle={(index === 0 || index % 3 === 0) && { color: highlightTextColor }} />
                     </Grid>

@@ -28,7 +28,7 @@ export default function Exchange() {
 
     return (
         <Box sx={exchangeRootStyle}>
-            <Box>
+            <Box sx={{ ml: '1rem' }}>
                 <Stack direction="row" sx={{ borderRadius: '8px', bgcolor: '#0D152E', maxHeight: '100px' }}>
                     <Box sx={{ padding: '1.9rem 3.3rem 1.4rem 1.3rem', borderRight: 'solid 1px #91A0CE27', maxWidth: '300px' }}>
                         <Stack direction="row">
@@ -79,12 +79,12 @@ export default function Exchange() {
                 </Stack>
                 <Box sx={{ height: '1.7rem' }} />
                 <Stack direction="row" sx={{ width: '100%' }}>
-                    <Box sx={{ flexGrow: '2.7', alignSelf: 'stretch', height: '100%', mr: '0.8rem' }}>
+                    <Box sx={{ alignSelf: 'stretch', height: '100%', mr: '0.8rem' }}>
                         <ChartDataProvider>
                             <Charts/>
                         </ChartDataProvider>
                     </Box>
-                    <Box sx={{ flexGrow: '1', maxWidth: '340px' }}>
+                    <Box sx={{ minWidth: '300px' }}>
                         <OrderBook/>
                     </Box>
                 </Stack>
