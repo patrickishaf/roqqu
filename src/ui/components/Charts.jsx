@@ -1,7 +1,13 @@
 import { Box, Button, IconButton, Stack, Typography } from "@mui/material";
 import { useContext, useRef, useState } from "react";
 import ToggleButton from "../atoms/ToggleButton";
-import { Balance, CameraAlt, CandlestickChart, Reply, Settings, Timeline, ZoomOutMap } from '@mui/icons-material';
+import Balance from "@mui/icons-material/Balance";
+import CameraAlt from "@mui/icons-material/CameraAlt";
+import CandlestickChart from "@mui/icons-material/CandlestickChart";
+import Reply from "@mui/icons-material/Reply";
+import Settings from "@mui/icons-material/Settings";
+import Timeline from "@mui/icons-material/Timeline";
+import ZoomOutMap from "@mui/icons-material/ZoomOutMap";
 import { useEffect } from "react";
 import Chart from 'react-apexcharts';
 import { ChartDataContext } from "../../contexts/ChartContext";

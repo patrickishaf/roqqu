@@ -1,4 +1,4 @@
-import { AppBar, Avatar, Badge, Box, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, SvgIcon, Toolbar, Typography } from "@mui/material"
+import { AppBar, Avatar, Badge, Box, Drawer, Icon, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, SvgIcon, Toolbar, Typography } from "@mui/material"
 import Collapse from '@mui/material/Collapse';
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import NotificationsNoneOutlined from '@mui/icons-material/NotificationsNoneOutlined';
@@ -51,11 +51,10 @@ const drawerItems = [
 ];
 
 export default function Main() {
-    const [ drawerIsOpen, setDrawerIsOpen] = useState(true);
+    const [ drawerIsOpen, setDrawerIsOpen] = useState(false);
     const [activeLinkIndex, setActiveLinkIndex] = useState(0);
     const navigateTo = useNavigate();
     let location = useLocation();
-    console.log('THE LOCATION IS', location);
 
     /**
      * This function changes the active nav drawer item when the url changes.

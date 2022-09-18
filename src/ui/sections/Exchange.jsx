@@ -14,6 +14,10 @@ export default function Exchange() {
     const [pair, setPair] = useState('BTC/USDT');
     const exchangeData = useContext(ExchangeStateContext);
 
+    function selectPair(event) {
+        setPair(event.target.value);
+    }
+
     const textStyle = {
         fontSize: '0.8rem',
         color: '#E4E4FA91',
@@ -26,19 +30,40 @@ export default function Exchange() {
         <Box sx={exchangeRootStyle}>
             <Box>
                 <Stack direction="row" sx={{ borderRadius: '8px', bgcolor: '#0D152E', maxHeight: '100px' }}>
-                    <Box sx={{ padding: '1.9rem 3.3rem 1.4rem 1.3rem', borderRight: 'solid 1px #91A0CE27' }}>
+                    <Box sx={{ padding: '1.9rem 3.3rem 1.4rem 1.3rem', borderRight: 'solid 1px #91A0CE27', maxWidth: '300px' }}>
                         <Stack direction="row">
                             <Box sx={{ height: '33px', width: '33px' }}>
                                 <img height="33px" src={bitcoin} alt="bitcoin icon" />
                             </Box>
                             <Stack direction="column">
-                                <Select sx={{ color: 'black', width: '84px', height: '22px' }} label={pair}>
-                                    <MenuItem value={10}>Soda</MenuItem>
-                                    <MenuItem value={11}>Man</MenuItem>
-                                    <MenuItem value={12}>Will</MenuItem>
-                                    <MenuItem value={13}>Not</MenuItem>
-                                    <MenuItem value={14}>Smith</MenuItem>
+                                <Select
+                                    MenuProps={{
+                                        sx: {
+                                            border: 'none',
+                                            outline: 'none',
+                                            '& .MuiPaper-root': {
+                                                backgroundColor: '#293E41',
+                                            }
+                                        }
+                                    }}
+                                    sx={{
+                                        color: 'white', height: '22px', border: 'none', outline: 'none',
+                                        '.MuiOutlinedInput-notchedOutline': { border: 'none', outline: 'none' } 
+                                    }}
+                                    label={pair}
+                                    value={pair}
+                                    onChange={selectPair}>
+                                    <MenuItem value={'BTC/USDT'}>{'BTC/USDT'}</MenuItem>
+                                    <MenuItem value={'ETH/USDT'}>{'ETH/USDT'}</MenuItem>
+                                    <MenuItem value={'BNB/USDT'}>{'BNB/USDT'}</MenuItem>
+                                    <MenuItem value={'ICP/USDT'}>{'ICP/USDT'}</MenuItem>
+                                    <MenuItem value={'PLG/USDT'}>{'PLG/USDT'}</MenuItem>
                                 </Select>
+                                <Typography sx={{
+                                    fontSize: '0.8rem',
+                                    color: '#E4E4FA91',
+                                    ml: '0.9rem'
+                                }}>Bitcoin</Typography>
                             </Stack>
                         </Stack>
                     </Box>
@@ -54,12 +79,11 @@ export default function Exchange() {
                 </Stack>
                 <Box sx={{ height: '1.7rem' }} />
                 <Stack direction="row" sx={{ width: '100%' }}>
-                    <Box sx={{ flexGrow: '2.7', alignSelf: 'stretch', height: '100%' }}>
+                    <Box sx={{ flexGrow: '2.7', alignSelf: 'stretch', height: '100%', mr: '0.8rem' }}>
                         <ChartDataProvider>
                             <Charts/>
                         </ChartDataProvider>
                     </Box>
-                    <Box sx={{ width: '0.8rem'}}/>
                     <Box sx={{ flexGrow: '1', maxWidth: '340px' }}>
                         <OrderBook/>
                     </Box>
