@@ -6,6 +6,10 @@ const chartData = {
             id: 'crypto chart',
             type: 'candlestick',
         },
+        title: {
+            text: 'BTC / NGN: 26,792,926.87',
+            align: 'left',
+        },
         xaxis: {
             type: 'category',
             labels: {
@@ -15,10 +19,20 @@ const chartData = {
                 }
             }
         },
-    },
-    title: {
-        text: 'BTC / NGN: 26,792,926.87',
-        align: 'left',
+        grid: {
+            position: 'back',
+            borderColor: '#91A0CE27',
+            xaxis: {
+                lines: {
+                    show: true,
+                }
+            },
+            yaxis: {
+                lines: {
+                    show: true,
+                }
+            }
+        },
     },
     series: [{
         name: 'BTC/NGN: 26,792,926.87',

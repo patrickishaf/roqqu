@@ -1,6 +1,7 @@
 export const appbarStyle = {
     position: 'sticky',
-    bgcolor: '#080F24'
+    bgcolor: '#080F24',
+    zIndex: '10',
 }
 
 export const notifAvatarStyle = {
