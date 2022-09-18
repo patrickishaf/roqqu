@@ -1,6 +1,6 @@
 import { useRoutes } from "react-router-dom";
-import Exchange from "../ui/components/Exchange";
-import Home from "../ui/components/Home";
+import Exchange from "../ui/sections/Exchange";
+import Home from "../ui/sections/Home";
 import Main from "../ui/pages/Main";
 
 export default function Router() {

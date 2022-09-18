@@ -1,5 +1,7 @@
 import { createContext } from "react";
 
+const price = '12299.304781';
+
 const exchangeState = {
     currencyPair: 'BTC /USDT',
     currencyName: 'Bitcoin',
@@ -10,14 +12,21 @@ const exchangeState = {
     dailyChange: '+3.04%',
     btcNgn: '26,792,926.87',
     orderBook: {
-        orders: [
-            {
-                price: '',
-                amount: '',
-                total: '',
-            },
-        ]
-    }
+        price,
+        amount: '5.304781',
+        total: '5.304781',
+    },
+    orderBookData: [
+        {
+            price,
+            amount: '5.304781',
+            total: '5.304781',
+            progress: '',
+        },
+    ],
+    progresses: [
+        '100%', '0%', '0%', '90%', '0%', '0%', '60%', '0%', '0%', '40%', '0%', '0%', '30%', '0%', '0%', '40%', '0%', '0%'
+    ]
 }
 
 const ExchangeStateContext = createContext(exchangeState);

@@ -11,7 +11,7 @@ export default function CoreAssets() {
             <Grid container columnSpacing="3.7vw" rowSpacing="1.8vw">
                 {
                     coreAssets.map((asset, index) => (
-                        <Grid item xs={12} md={6}>
+                        <Grid key={index} item xs={12} md={6}>
                             <Box sx={assetTileStyle}>
                                 <Stack direction="row" alignItems="center" sx={{ width: '100%' }}>
                                     <Box sx={imageBoxStyle}>

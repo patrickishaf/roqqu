@@ -1,5 +1,5 @@
 import { Box, Button, Chip, Stack, Tab, Typography } from "@mui/material";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { HomeStateContext } from "../../contexts/HomeContext";
 import { buttonStyle, dateStyle, rootStyle, sidebarStyle, subtitleStyle, tabLabelStyle, textBoxStyle, titleStyle, walletBalanceBoxStyle, walletBalanceTextStyle, welcomeCardImgBoxStyle, welcomeCardStyle } from "../styles/home";
 import { ArrowForward } from '@mui/icons-material';
@@ -8,14 +8,14 @@ import ActivityTile from "../atoms/ActivityTile";
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import CoreAssets from "./CoreAssets";
+import CoreAssets from "../components/CoreAssets";
 
 export default function Home() {
     const homeState = useContext(HomeStateContext);
-    const [selectedTabIndex, setSelectedTabIndex] = useState(1);
+    const [selectedTabIndex, setSelectedTabIndex] = useState("1");
 
-    function switchToTab(event, index) {
-        setSelectedTabIndex(index);
+    function switchToTab(event, value) {
+        setSelectedTabIndex(value);
     }
 
     return (
