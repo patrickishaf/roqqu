@@ -1,4 +1,12 @@
-import { AppBar, Avatar, Badge, Box, Drawer, Icon, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Stack, SvgIcon, Toolbar, Typography } from "@mui/material"
+import AppBar from "@mui/material/AppBar";
+import Avatar from "@mui/material/Avatar";
+import Badge from "@mui/material/Badge";
+import Box from "@mui/material/Box";
+import List from "@mui/material/List";
+import Stack from "@mui/material/Stack";
+import SvgIcon from "@mui/material/SvgIcon";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
 import Collapse from '@mui/material/Collapse';
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import NotificationsNoneOutlined from '@mui/icons-material/NotificationsNoneOutlined';
@@ -12,6 +20,7 @@ import { ReactComponent as fire } from '../../assets/fire.svg';
 import { ReactComponent as settings } from '../../assets/settingsalt.svg';
 import { ReactComponent as bell } from '../../assets/notification.svg';
 import GridView from "@mui/icons-material/GridView";
+import { Icon } from "@mui/material";
 
 const drawerItems = [
     {
@@ -74,10 +83,6 @@ export default function Main() {
         borderRadius: '8px',
     };
 
-    const inactiveLinkStyle = {
-        bgcolor: 'transaparent',
-    }
-
     function openDrawer() {
         setDrawerIsOpen(true);
     }
@@ -118,14 +123,14 @@ export default function Main() {
                             <Box sx={{ height: '4.2rem' }}/>
                             <List sx={{ paddingLeft: '1.1rem' }}>
                                 {drawerItems.map((item, index) => (
-                                    <Box key={index} sx={{ mr: '1.4rem', mb: '32px', ...index === activeLinkIndex ? activeLinkStyle : inactiveLinkStyle, width : drawerIsOpen ? '200px' : '48px', cursor: 'pointer' }} onClick={() => handleLinkClick(item.childRouteName, index)}>
+                                    <Box key={index} sx={{ mr: '1.4rem', mb: '32px', ...index === activeLinkIndex && activeLinkStyle, width : drawerIsOpen ? '200px' : '48px', cursor: 'pointer' }} onClick={() => handleLinkClick(item.childRouteName, index)}>
                                         <Stack direction="row" alignItems="center" sx={{ padding: '10px 13px 4px 13px'}}>
                                             <Box sx={{ mr: '22px' }}>
                                             {
-                                                index === 0 ? <GridView/> : <SvgIcon component={item.component} sx={{ color: 'red' }}/>
+                                                index === 0 ? <Icon color="red"><GridView/></Icon> : <SvgIcon component={item.component}/>
                                             }
                                             </Box>
-                                            { drawerIsOpen && <Typography>{item.text}</Typography>}
+                                            { drawerIsOpen && <Typography sx={{ fontSize: '0.9rem', color: index === activeLinkIndex ? 'white' : '#E4E4FA91' }}>{item.text}</Typography>}
                                         </Stack>
                                     </Box>
                                 ))}
