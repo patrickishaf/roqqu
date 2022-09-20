@@ -35,7 +35,7 @@ export default function OrderBook() {
                 <Typography sx={{ textAlign: 'center', mt: '0.8rem', mb: '0.9rem' }}>128299.304781 USDT</Typography>
                 <Divider sx={{ background: '#91A0CE27' }} />
                 <Box sx={{ height: '0.9rem' }} />
-                <OrderGrid highlightColor='#13A5831C' highlightTextColor='#13A583' />
+                <OrderGrid highlightColor='#13A5831C' highlightTextColor='#13A583' tag="asks" />
                 <Box sx={{ height: '1.3rem' }} />
             </Box>
         </Box>
