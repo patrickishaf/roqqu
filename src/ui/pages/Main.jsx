@@ -11,7 +11,7 @@ import Collapse from '@mui/material/Collapse';
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
 import NotificationsNoneOutlined from '@mui/icons-material/NotificationsNoneOutlined';
 import { actionStyle, actionSpacingStyle, notifAvatarStyle, rootStyle, appbarStyle } from "../styles/main";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ReactComponent as barchart } from '../../assets/barchart.svg';
 import { ReactComponent as wallet } from '../../assets/wallet.svg';
 import { ReactComponent as book } from '../../assets/book.svg';
@@ -21,6 +21,8 @@ import { ReactComponent as settings } from '../../assets/settingsalt.svg';
 import { ReactComponent as bell } from '../../assets/notification.svg';
 import GridView from "@mui/icons-material/GridView";
 import { Icon } from "@mui/material";
+import { ChartDataContext } from "../../contexts/ChartContext";
+import series from "../../config/series";
 
 const drawerItems = [
     {
@@ -64,6 +66,7 @@ export default function Main() {
     const [activeLinkIndex, setActiveLinkIndex] = useState(0);
     const navigateTo = useNavigate();
     let location = useLocation();
+    const chartData = useContext(ChartDataContext);
 
     /**
      * This function changes the active nav drawer item when the url changes.
@@ -77,6 +80,21 @@ export default function Main() {
             setActiveLinkIndex(1);
         }
     }, [location]);
+
+    useEffect(() => {
+        try {
+            const data = sessionStorage.getItem('series');
+            if (data) {
+                chartData.series.data = data;
+            } else {
+                sessionStorage.setItem('series', series);
+            }
+        } catch (err) {
+            if (err.message === "Cannot read properties of undefined (reading 'series')") {
+                sessionStorage.setItem('series', series);
+            }
+        }
+    });
 
     const activeLinkStyle = {
         bgcolor: '#078CA4ED',
