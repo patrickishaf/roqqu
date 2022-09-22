@@ -46,17 +46,24 @@ export default function Charts() {
             return;
         }
         let candlestick = createCandleStick(data);
-        console.log('new candlestick:', candlestick);
         setCandlesticks((candlesticks) => ([...candlesticks, candlestick]));
-        console.log('candlesticks: ', candlesticks);
-        
     });
 
     useEffect(() => {
-        setSeries((series) => ([{
-            name: 'SOME SHIT',
-            data: candlesticks,
-        }]));
+        console.log('length of candlesticks: ', candlesticks.length);
+        if (candlesticks.length % 20 === 0) {
+            setSeries((series) => ([{
+                name: series[0].name,
+                data: candlesticks,
+            }]));
+        }
+        if (candlesticks.length === 500) {
+            ws.send(unsubscriptionRequest([
+                "bnbbtc@aggTrade",
+                "bnbbtc@depth"
+            ], 1));
+            ws.close();
+        }
     }, [candlesticks])
 
     return (
