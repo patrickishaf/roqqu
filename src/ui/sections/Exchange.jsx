@@ -8,7 +8,6 @@ import { ExchangeStateContext } from "../../contexts/ExchangeContext";
 import CustomDivider from "../atoms/CustomDivider";
 import Charts from "../components/Charts";
 import OrderBook from "../components/OrderBook";
-import { ChartDataProvider } from "../../contexts/ChartContext";
 
 export default function Exchange() {
     const [pair, setPair] = useState('BTC/USDT');
@@ -80,9 +79,7 @@ export default function Exchange() {
                 <Box sx={{ height: '1.7rem' }} />
                 <Stack direction="row" sx={{ width: '100%' }}>
                     <Box sx={{ alignSelf: 'stretch', height: '100%', mr: '0.8rem' }}>
-                        <ChartDataProvider>
-                            <Charts/>
-                        </ChartDataProvider>
+                        <Charts/>
                     </Box>
                     <Box sx={{ minWidth: '300px' }}>
                         <OrderBook/>
